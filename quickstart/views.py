@@ -1,9 +1,9 @@
 from django.shortcuts import render
 
-from .quickstart.models import Passnger
+from quickstart.models import Passenger
 from rest_framework import permissions, viewsets
 
-from tutorial.quickstart.serializers import PassngerSerializer
+from quickstart.serializers import PassengerSerializer
 
 
 class PassngerViewSet(viewsets.ModelViewSet):
@@ -11,8 +11,8 @@ class PassngerViewSet(viewsets.ModelViewSet):
     API endpoint that allows users to be viewed or edited.
     """
 
-    queryset = Passnger.objects.all().order_by("fisrtName")
-    serializer_class = PassngerSerializer
+    queryset = Passenger.objects.all().order_by("lastName")
+    serializer_class = PassengerSerializer
     # permission_classes = [permissions.IsAuthenticated]
 
 
